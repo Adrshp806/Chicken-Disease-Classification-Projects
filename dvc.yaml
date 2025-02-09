@@ -43,16 +43,16 @@ stages:
 
   
 
-  # evaluation:
-  #   cmd: python src/cnnClassifier/pipeline/stage_04_evaluation.py
-  #   deps:
-  #     - src/cnnClassifier/pipeline/stage_04_evaluation.py
-  #     - config/config.yaml
-  #     - artifacts/data_ingestion/Chicken-fecal-images
-  #     - artifacts/training/model.h5
-  #   params:
-  #     - IMAGE_SIZE
-  #     - BATCH_SIZE
-  #   metrics:
-  #   - scores.json:
-  #       cache: false
+  evaluation:
+    cmd: python src/cnnClassifier/pipeline/stage_04_evaluation.py
+    deps:
+      - src/cnnClassifier/pipeline/stage_04_evaluation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/Chicken-fecal-images
+      - artifacts/training/model.h5
+    params:
+      - IMAGE_SIZE
+      - BATCH_SIZE
+    metrics:
+    - scores.json:
+        cache: false
